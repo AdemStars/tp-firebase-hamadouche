@@ -1,4 +1,4 @@
-//--------------------------fonction GET DATA ----------------------------------
+
 db.collection('personnes').get().then(
   (mydata)=>{
    mydata.docs.forEach(doc=>{
@@ -21,6 +21,9 @@ function affiche(doc){
   li.appendChild(supprimer) // intégrer le 'x' dans la balise li
  
   ul.appendChild(li);//intégrer la balise li dans la balise ul présente sur le html
+  //   liid=li.getAttribute("data-id") // attribue a liid l'id en liste
+ // alert('li id = ' + liid) // box alert avec "li id" + chaque id en alert"
+
 }
 //----------------------------------------------------------------------------------------------------
  
@@ -33,4 +36,22 @@ db.collection('personnes').get().then(
      
    });
 //--------------------------------------------------------------------------------
- 
+//--------------------------------------function ADD DATA --------------------------------------
+
+const form = document.querySelector('#ajouter'); //selectionné l'élément form du HTML
+//--------------------------fonction GET DATA ----------------------------------
+form.addEventListener('submit', (e) => { //Actionner l'évenement submit de la form ajouter
+  e.preventDefault(); // Empécher l'éxécution de submmit pour laisser la fonction firebase s'éxécuter
+  db.collection('personnes').add({
+   //----mettre les données de la forme dans les variable à ajouter------
+    Nom: form.nom.value, 
+    prenom: form.prenom.value,
+    age: form.age.value
+  });
+  //------Vider les formes ------
+  form.nom.value="";
+  form.prenom.value="";
+  form.age.value="";
+});
+
+//--------------------------------------------------------------------------------------------------
