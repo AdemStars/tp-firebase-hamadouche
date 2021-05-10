@@ -28,8 +28,10 @@ function affiche(doc){
      let id = e.target.parentElement.getAttribute('data-id');
           db.collection("personnes").doc(id).delete().then(() => {
         console.log("Document successfully deleted!");
+        window.location.reload();
     }).catch((error) => {
         console.error("Error removing document: ", error);
+        window.location.reload();
     }); 
 
 
@@ -60,11 +62,20 @@ form.addEventListener('submit', (e) => { //Actionner l'évenement submit de la f
     Nom: form.nom.value, 
     prenom: form.prenom.value,
     age: form.age.value
+  }).then(()=>{
+     alert('le document a ete ajoute');
+      
   });
+
+    
+  
   //------Vider les formes ------
   form.nom.value="";
   form.prenom.value="";
   form.age.value="";
+
+    
 });
+
 
 //--------------------------------------------------------------------------------------------------
