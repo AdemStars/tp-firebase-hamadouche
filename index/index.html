@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+ 
+        <h1>Cloud Personnes</h1>
+ 
+        <div class="content">
+ 
+            <form id="ajouter">
+                <input type="text" name="nom" placeholder="nom">
+                <input type="text" name="prenom" placeholder="prenom">
+                <input type="text" name="age" placeholder="age">
+                <button>Ajouter</button>
+            </form>
+ 
+            <ul id="list"></ul>
+            
+             
+        </div>
+ 
+        <script>
+//---------------------  Firebase TOKEN -------------------------------
+            var firebaseConfig = {
+                        apiKey: "AIzaSyCB2rYIwGzSYhDmqe5LdJHxQI1l-Bi-QLk",
+                        authDomain: "fir-hamaoduche.firebaseapp.com",
+                        projectId: "fir-hamaoduche",
+                        storageBucket: "fir-hamaoduche.appspot.com",
+                        messagingSenderId: "596586232948",
+                        appId: "1:596586232948:web:a2f7f2c43f1e1bc9e52521",
+                        measurementId: "G-43LLBYPMSC"
+            };
+//---------------------------------------------------------------------------------------
+ 
+ 
+ 
+ //----------------- FIREBASE INITIALISATION -------------------------------------------------
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+//------------------------------------------------------------------------------------
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html>
+ 
+ 

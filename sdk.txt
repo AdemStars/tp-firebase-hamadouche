@@ -1,0 +1,23 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCB2rYIwGzSYhDmqe5LdJHxQI1l-Bi-QLk",
+    authDomain: "fir-hamaoduche.firebaseapp.com",
+    projectId: "fir-hamaoduche",
+    storageBucket: "fir-hamaoduche.appspot.com",
+    messagingSenderId: "596586232948",
+    appId: "1:596586232948:web:a2f7f2c43f1e1bc9e52521",
+    measurementId: "G-43LLBYPMSC"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
