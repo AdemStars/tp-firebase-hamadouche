@@ -1,4 +1,4 @@
-
+const form = document.querySelector('#ajouter'); //selectionné l'élément form du HTML
 db.collection('personnes').get().then(
   (mydata)=>{
    mydata.docs.forEach(doc=>{
@@ -7,7 +7,7 @@ db.collection('personnes').get().then(
    });
 //--------------------------------------------------------------------------------
 const ul = document.querySelector('#list'); // Seléctionner l'élément list sur le document HTML
- 
+
  
 //---------------------------Fonction Affficher les données -------------------------------------------------
 function affiche(doc){
@@ -23,6 +23,19 @@ function affiche(doc){
   ul.appendChild(li);//intégrer la balise li dans la balise ul présente sur le html
   //   liid=li.getAttribute("data-id") // attribue a liid l'id en liste
  // alert('li id = ' + liid) // box alert avec "li id" + chaque id en alert"
+  //-------------function delete data -----------------------
+  supprimer.addEventListener('click',(e)=>{
+     let id = e.target.parentElement.getAttribute('data-id');
+          db.collection("personnes").doc(id).delete().then(() => {
+        console.log("Document successfully deleted!");
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+    }); 
+
+
+  })
+  //-------------------------------------------------------------------
+ 
 
 }
 //----------------------------------------------------------------------------------------------------
@@ -38,7 +51,7 @@ db.collection('personnes').get().then(
 //--------------------------------------------------------------------------------
 //--------------------------------------function ADD DATA --------------------------------------
 
-const form = document.querySelector('#ajouter'); //selectionné l'élément form du HTML
+
 //--------------------------fonction GET DATA ----------------------------------
 form.addEventListener('submit', (e) => { //Actionner l'évenement submit de la form ajouter
   e.preventDefault(); // Empécher l'éxécution de submmit pour laisser la fonction firebase s'éxécuter
