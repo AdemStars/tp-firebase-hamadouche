@@ -54,6 +54,9 @@ li div{
     font-weight:  bold;
     cursor:  pointer;
 }
+li div:hover{
+    background: rgb(255,13,13);
+}
  
 form input{
     float: left;
@@ -92,5 +95,32 @@ button{
     font-family: ubuntu;
     letter-spacing: 1px;
     color: rgb(255, 252, 252);
+    cursor:  pointer;
+}
+button:hover{
+    background: rgb(255, 13, 13);
+}
+li button{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    color: rgb(255, 252, 252);
+    background: rgb(38, 100, 30);
+    width: 80px;
+    text-align: center;
+    padding: 20px 0;
+    font-weight:  bold;
+    cursor:  pointer;
+}
+li button:hover{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    color: rgb(255, 252, 252);
+    background: rgb(120, 214, 130);
+    width: 80px;
+    text-align: center;
+    padding: 20px 0;
+    font-weight:  bold;
     cursor:  pointer;
 }
