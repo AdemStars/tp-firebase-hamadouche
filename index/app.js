@@ -57,10 +57,7 @@ function affiche(doc){
     });
 
   })
-    
-    
   //-------------------------------------------------------------------
-    
 }
 
 
@@ -87,6 +84,7 @@ form.addEventListener('submit', (e) => { //Actionner l'évenement submit de la f
     prenom: form.prenom.value,
     age: form.age.value
   }).then(()=>{
+      window.location.reload();
      alert('le document a ete ajoute');
       
   });
